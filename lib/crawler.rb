@@ -1,6 +1,13 @@
 require 'bundler'
-require 'octokit'
+Bundler.require
 
-require_relative 'extensions/octokit_mirror'
-require_relative 'extensions/octokit_pool'
+Crawler = Module.new
 
+require_relative 'extensions/moped'
+require_relative 'crawler/persistence'
+require_relative 'crawler/indexes'
+require_relative 'crawler/worker'
+require_relative 'crawler/task'
+
+tasks = File.expand_path('../crawler/task/*.rb', __FILE__)
+Dir[tasks].each {|file| require file }
