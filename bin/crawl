@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/crawler'
+
+Thread.new do
+  loop do
+    Crawler::Stats.octokit 'octokit-stats.log'
+    sleep 30
+  end
+end
+
+Crawler::Worker.start

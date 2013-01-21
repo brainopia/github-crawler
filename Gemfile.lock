@@ -48,3 +48,4 @@ DEPENDENCIES
   octokit!
   octokit_pool!
   pry-nav
+  slop
