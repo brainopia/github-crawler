@@ -22,15 +22,15 @@ class Crawler::Task
       { '$set' => { indicator => value.to_s }.merge!(additional) }
     end
 
+    def fetch
+      task = new_tasks.modify indication(:process)
+      new task if task
+    end
+
     private
 
     def queues
       [Projects, Users, Contributions, Orgs, OrgRepos, Members, Stars]
-    end
-
-    def fetch
-      task = new_tasks.modify indication(:process)
-      new task if task
     end
 
     def new_tasks
