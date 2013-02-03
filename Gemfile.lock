@@ -10,8 +10,8 @@ GIT
       multi_json (~> 1.3)
 
 GIT
-  remote: https://gist.github.com/6027581b7e40d57f4412.git
-  revision: ef8f5bb7c25b7b3551d639734116cbf05d4e01be
+  remote: https://gist.github.com/4700962.git
+  revision: b17f27ce423d05a315aae56fe32f057e5b82384e
   specs:
     octokit_pool (0.5)
       atomic
